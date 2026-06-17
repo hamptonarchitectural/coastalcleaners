@@ -328,7 +328,25 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    /* --- THIS IS THE MOBILE DRAWER CODE --- */
+    .nav-links {
+        position: absolute;
+        top: 70px;          
+        left: -100%;        /* Keeps it hidden off-screen to start */
+        display: flex;      /* Ensures it displays items when active */
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        transition: left 0.4s ease;
+        z-index: 9999;      /* Forces it to layer over background content */
+    }
+
+    /* When JavaScript adds the active class, slide it into view */
+    .nav-links.active {
+        left: 0 !important;
+    }
+    /* -------------------------------------- */
+
     .contact-grid { grid-template-columns: 1fr; }
     .grid-split { grid-template-columns: 1fr; }
 }
