@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+:root {
+    /* Coastal Cleaners - Custom Swatch Palette */
+    --primary: #D92B8B;       /* Vibrant Fuchsia */
+    --primary-dark: #BF246D;  /* Darkest Fuchsia */
+    --secondary: #F2CEDF;     /* Pale Pink (used for alternating section backgrounds) */
+    --text-main: #2d3748;     /* Dark slate for readable body text */
+    --text-light: #BF246D;    /* Dark Fuchsia for sub-text */
+    --bg-light: #F2F2F2;      /* Light Grey from swatch (used for headers/body) */
+    --white: #ffffff;         /* Kept pure white so cards pop against the pink/grey */
+    --accent: #F294C0;        /* Mid Pink (used for borders and glows) */
+    
+    --font-family: 'Nunito', sans-serif;
+    --border-radius: 40px;     
+}
+
+/* =========================================
+   Coastal Cleaners - Main Stylesheet
+   ========================================= */
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: var(--font-family); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+    background-color: var(--bg-light); 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* Navigation & Header */
+.top-bar { 
+    background-color: var(--primary-dark); 
+    color: var(--white); 
+    text-align: center; 
+    padding: 10px; 
+    font-size: 1.0rem; 
+}
+
+.top-bar a { 
+    text-decoration: underline; 
+    font-weight: bold; 
+}
+
+header { 
+    background-color: var(--bg-light); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 0; 
+}
+
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: var(--primary-dark); 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-links a {
+    font-size: 1.2rem; /* Adjust this number to change the size! */
+    font-weight: 600;  /* This makes the text slightly thicker */
+    transition: color 0.3s ease; /* Makes the hover effect smoother */
+}
+
+.nav-links a:hover { 
+    color: var(--primary); 
+}
+
+/* Hero Sections */
+.hero { 
+    /* Set the image as a background with a light grey overlay for text readability */
+    background-size: cover;
+    background-position: center;
+    
+    /* Reduced padding to make the section less bulky */
+    padding: 80px 20px; 
+    text-align: center; 
+    border-radius: 60px;
+    margin: 20px auto; 
+    max-width: 1300px;
+    box-shadow: 0 10px 30px rgba(217, 43, 139, 0.15); 
+    border: 2px solid var(--accent);
+}
+
+/* Home Page Kitchen Image */
+.hero-home {
+    background-image: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0.0)), url('Image Files/kitchen-hero.jpeg');
+}
+
+/* Regular Cleaning Loft Image */
+.hero-regular {
+    background-image: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0.0)), url('Image Files/loft-room-hero.jpeg');
+}
+
+/* Deep Cleaning Page Image */
+.hero-deep {
+    background-image: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0.0)), url('Image Files/lounge-hero.png'); 
+    /* Tip: Change 'bathroom-after.jpeg' to whatever image you want for deep cleaning! */
+}
+/* End of Tenancy Page Image */
+.hero-tenancy {
+    background-image: linear-gradient(rgba(242, 242, 242, 0.3), rgba(242, 242, 242, 0.0)), url('Image Files/dinning-hero.png');
+    /* Tip: Change 'lounge-after.jpeg' to your preferred move-out cleaning image! */
+}
+
+.hero h1 { 
+    font-size: 2.8rem; 
+    margin-bottom: 5px; /* Reduced from 20px to bring it closer to the sub-heading */
+    color: var(--white); 
+}
+
+.hero p { 
+    font-size: 1.4rem; /* Slightly larger so it stands out on the image */
+    color: var(--white); 
+    margin-bottom: 25px; /* Reduced space before the button */
+    font-weight: 600;
+}
+
+.sub-hero { 
+    background-color: var(--white); 
+    padding: 50px 20px; 
+    text-align: center; 
+    border-bottom: 1px solid var(--accent); 
+}
+
+.sub-hero h1 { 
+    font-size: 2cap; 
+    color: var(--primary-dark); 
+    margin-bottom: 10px; 
+}
+
+.sub-hero p { 
+    font-size: 1.1rem; 
+    color: var(--text-light); 
+}
+
+/* Buttons */
+.btn { 
+    background-color: var(--primary); 
+    color: var(--white); 
+    padding: 15px 30px; 
+    border-radius: var(--border-radius); 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    display: inline-block; 
+    transition: background 0.3s ease; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 20px; 
+}
+
+.btn:hover { 
+    background-color: var(--primary-dark); 
+}
+
+/* Grids & Layouts */
+.section-title { 
+    text-align: center; 
+    font-size: 2rem; 
+    margin-top: 20px;    /* ADD THIS: Pushes the text down from the top */
+    margin-bottom: 0px; /* Keeps it tight to the cards below */
+    color: var(--primary-dark); 
+}
+
+.content-section { 
+    padding: 20px 0 20px 0; /* 20px Top, 0px Right, 60px Bottom, 0px Left */
+    background-color: var(--secondary); 
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 40px 0px 40px 0px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 40px 0px 40px 0px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding: 40px 0px 40px 0px; }
+.grid-split { display: grid; grid-template-columns: 3fr 2fr; gap: 40px; }
+
+/* Cards & Checklists */
+.card { 
+    background: var(--white); 
+    padding: 30px 20px; 
+    border-radius: var(--border-radius); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+    border: 1px solid var(--accent);
+    text-align: center; 
+}
+
+.card h3 { 
+    margin-bottom: 15px; 
+    color: var(--primary-dark); 
+}
+
+.checklist { 
+    background: var(--white); 
+    padding: 30px; 
+    border-radius: var(--border-radius); 
+    border: 1px solid var(--accent); 
+}
+
+.checklist ul { list-style: none; padding: 0; }
+.checklist li { padding: 10px 0; border-bottom: 1px solid var(--accent); display: flex; align-items: center; gap: 10px; }
+.checklist li::before { content: "✓"; color: var(--primary); font-weight: bold; }
+.checklist li:last-child { border-bottom: none; }
+
+/* Custom Icon Styling */
+.step-icon { 
+    font-size: 3.5rem; /* Makes the icons nice and large */
+    color: var(--accent); /* Uses your mid-pink color */
+    margin-bottom: 15px; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+/* Adds a nice hover effect so the icon pops when you mouse over the card */
+.card:hover .step-icon {
+    transform: scale(1.1); 
+    color: var(--primary-dark); 
+}
+
+.milestones { 
+    background-color: var(--primary-dark); 
+    color: var(--white); 
+    padding: 40px 0; 
+    text-align: center; 
+    border-radius: 60px;
+    margin: 40px auto;
+    max-width: 1300px;
+    box-shadow: 0 10px 30px rgba(191, 36, 109, 0.3); /* Updated to new dark fuchsia glow */
+}
+
+.milestone-stat { 
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    color: var(--white);
+}
+
+/* Ensure the card is relative so the badge knows where to attach itself */
+.pricing-card { 
+    text-align: center; 
+    border: 1px solid var(--accent); 
+    transition: transform 0.3s ease; 
+    position: relative; /* ADD THIS LINE */
+}
+
+.pricing-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--primary); 
+    box-shadow: 0 10px 15px rgba(217, 43, 139, 0.1);
+}
+
+.pricing-price { 
+    font-size: 2.5rem; 
+    color: var(--primary-dark); 
+    margin: 20px 0; 
+    font-weight: bold; 
+}
+
+/* NEW: The floating corner badge */
+.card-badge {
+    position: absolute;
+    top: -15px;         /* Pulls it slightly above the top edge */
+    right: -15px;       /* Pulls it slightly outside the right edge */
+    background-color: var(--primary); /* Vibrant Fuchsia from your swatch */
+    color: var(--white);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border-radius: 20px; /* Gives it nice rounded pill-shaped edges */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Adds a little drop shadow */
+    z-index: 10;
+}
+
+/* Contact & Footer */
+.contact-section { 
+    background-color: var(--white); 
+    padding: 60px 0; 
+    border-top: 1px solid var(--accent);
+}
+
+.contact-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group input, .form-group textarea { 
+    width: 100%; 
+    padding: 15px; 
+    border: 1px solid var(--accent); 
+    border-radius: var(--border-radius); 
+    font-family: inherit; 
+    background-color: var(--bg-light);
+}
+
+footer { 
+    background-color: var(--primary-dark); 
+    color: var(--white); 
+    text-align: center; 
+    padding: 30px; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .grid-split { grid-template-columns: 1fr; }
+}
+
+/* Logo Image Styling - Updated for Mobile */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 150px; 
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+.logo img:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 80px; 
+    }
+}
+
+/* Page Images */
+.content-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid var(--accent);
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: 40px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* Full Width Large Before/After Grid */
+.before-after-grid-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Side-by-side */
+    gap: 25px;                      /* More breathing room */
+    margin-top: 40px;               /* Pushes it down away from the text above */
+}
+
+.image-box-large {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.image-box-large img {
+    width: 100%;
+    height: 380px;                  /* Noticeably taller and impactful */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Subtle hover effect to showcase details */
+.image-box-large:hover img {
+    transform: scale(1.03);
+}
+
+/* Float Badges for Large Setup */
+.badge-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: white;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.before-label { background-color: rgba(220, 53, 69, 0.9); }
+.after-label { background-color: rgba(40, 167, 69, 0.9); }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .before-after-grid-large {
+        grid-template-columns: 1fr; /* Stacks them perfectly on phones */
+        gap: 15px;
+    }
+    .image-box-large img {
+        height: 280px; /* Keeps them sensible on smaller screens */
+    }
+}
